@@ -39,7 +39,7 @@ export function Canvas() {
           {/* Drop Zone */}
           <div
             ref={setNodeRef}
-            className="@container min-h-screen rounded-xl overflow-hidden transition-all"
+            className="@container min-h-screen rounded-xl overflow-x-hidden transition-all"
             style={{
               backgroundColor: '#ffffff',
               outline: isOver ? '2px dashed #7c3aed' : '2px dashed transparent',

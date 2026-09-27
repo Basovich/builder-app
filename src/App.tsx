@@ -40,14 +40,34 @@ export default function App() {
 
     const activeData = active.data.current;
 
-    // Drop from sidebar onto canvas
-    if (activeData?.source === 'sidebar' && (over.id === 'canvas-drop' || blocks.some((b) => b.instanceId === over.id))) {
+    // Drop from sidebar onto canvas or specific block position
+    if (activeData?.source === 'sidebar') {
       const template = activeData.template as BlockTemplate;
-      addBlock({
-        templateId: template.id,
-        type: template.type,
-        props: { ...template.defaultProps },
-      });
+
+      let insertIndex = blocks.length;
+      if (over.id !== 'canvas-drop') {
+        const overIndex = blocks.findIndex((b) => b.instanceId === over.id);
+        if (overIndex !== -1) {
+          const overRect = over.rect;
+          const activeRect = active.rect.current.translated;
+          if (overRect && activeRect) {
+            const overMiddleY = overRect.top + overRect.height / 2;
+            const activeCenterY = activeRect.top + activeRect.height / 2;
+            insertIndex = activeCenterY > overMiddleY ? overIndex + 1 : overIndex;
+          } else {
+            insertIndex = overIndex;
+          }
+        }
+      }
+
+      addBlock(
+        {
+          templateId: template.id,
+          type: template.type,
+          props: { ...template.defaultProps },
+        },
+        insertIndex
+      );
       return;
     }
 

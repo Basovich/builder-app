@@ -7,7 +7,7 @@ interface BuilderState {
   selectedBlockId: string | null;
   viewport: ViewportType;
 
-  addBlock: (block: Omit<CanvasBlock, 'instanceId'>) => void;
+  addBlock: (block: Omit<CanvasBlock, 'instanceId'>, atIndex?: number) => void;
   removeBlock: (instanceId: string) => void;
   moveBlock: (instanceId: string, direction: 'up' | 'down') => void;
   reorderBlocks: (fromIndex: number, toIndex: number) => void;
@@ -21,10 +21,16 @@ export const useBuilderStore = create<BuilderState>((set) => ({
   selectedBlockId: null,
   viewport: 'desktop',
 
-  addBlock: (block) =>
-    set((state) => ({
-      blocks: [...state.blocks, { ...block, instanceId: uuidv4() }],
-    })),
+  addBlock: (block, atIndex) =>
+    set((state) => {
+      const newBlock = { ...block, instanceId: uuidv4() };
+      if (atIndex !== undefined && atIndex >= 0 && atIndex <= state.blocks.length) {
+        const updated = [...state.blocks];
+        updated.splice(atIndex, 0, newBlock);
+        return { blocks: updated, selectedBlockId: newBlock.instanceId };
+      }
+      return { blocks: [...state.blocks, newBlock], selectedBlockId: newBlock.instanceId };
+    }),
 
   removeBlock: (instanceId) =>
     set((state) => ({

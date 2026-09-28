@@ -30,10 +30,10 @@ export function Topbar() {
       {/* Logo */}
       <div className="flex items-center gap-3">
         <div
-          className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black tracking-tight text-white shadow-md"
+          className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white shadow-md"
           style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
         >
-          AVAG
+          AM
         </div>
         <span className="text-sm font-bold text-white tracking-wide">AVAG Modelle</span>
         <div className="w-px h-4 bg-slate-700 mx-1" />

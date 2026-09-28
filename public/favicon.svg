@@ -14,8 +14,6 @@
   <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
   <rect width="496" height="496" x="8" y="8" rx="120" fill="none" stroke="#7c3aed" stroke-width="4" stroke-opacity="0.4" />
 
-  <!-- Stylized AVAG 'A' Mark -->
-  <path d="M 256 100 L 390 390 L 320 390 L 256 250 L 192 390 L 122 390 Z" fill="url(#primaryGrad)" />
-  <!-- Accent Inner Bar -->
-  <polygon points="180,310 332,310 310,360 202,360" fill="#ffffff" fill-opacity="0.9" />
+  <!-- AM Text Badge -->
+  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-weight="800" font-size="210" letter-spacing="-6">AM</text>
 </svg>

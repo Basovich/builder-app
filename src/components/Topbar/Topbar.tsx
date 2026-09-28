@@ -4,7 +4,7 @@ import { exportSite } from '../../utils/exportHtml';
 
 export function Topbar() {
   const { blocks } = useBuilderStore();
-  const [projectName, setProjectName] = useState('My Landing Page');
+  const [projectName, setProjectName] = useState('AVAG Modelle');
   const [isExporting, setIsExporting] = useState(false);
   const [editingName, setEditingName] = useState(false);
 
@@ -30,12 +30,12 @@ export function Topbar() {
       {/* Logo */}
       <div className="flex items-center gap-3">
         <div
-          className="w-8 h-8 rounded-lg flex items-center justify-center text-lg font-bold"
+          className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black tracking-tight text-white shadow-md"
           style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
         >
-          B
+          AVAG
         </div>
-        <span className="text-sm font-bold text-white tracking-wide">Bildos</span>
+        <span className="text-sm font-bold text-white tracking-wide">AVAG Modelle</span>
         <div className="w-px h-4 bg-slate-700 mx-1" />
         {editingName ? (
           <input

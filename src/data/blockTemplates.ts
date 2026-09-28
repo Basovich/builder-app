@@ -9,7 +9,7 @@ export const blockTemplates: BlockTemplate[] = [
     label: 'Header',
     icon: '🧭',
     defaultProps: {
-      logo: 'MyBrand',
+      logo: 'AVAG Modelle',
       navItems: ['Home', 'About', 'Services', 'Contact'],
       bgColor: '#ffffff',
       textColor: '#1e293b',
@@ -23,8 +23,8 @@ export const blockTemplates: BlockTemplate[] = [
     label: 'Footer',
     icon: '🔻',
     defaultProps: {
-      logo: 'MyBrand',
-      copyright: '© 2024 MyBrand. All rights reserved.',
+      logo: 'AVAG Modelle',
+      copyright: '© 2026 AVAG Modelle. All rights reserved.',
       links: ['Privacy Policy', 'Terms of Service', 'Contact'],
       bgColor: '#1e293b',
       textColor: '#f1f5f9',

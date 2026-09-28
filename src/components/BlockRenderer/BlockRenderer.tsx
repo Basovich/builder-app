@@ -102,13 +102,13 @@ function HeaderBlock({ p }: { p: Record<string, any> }) {
   return (
     <header
       style={{ backgroundColor: p.bgColor || '#ffffff', color: p.textColor || '#1e293b' }}
-      className="w-full px-4 @md:px-8 py-4 shadow-sm relative"
+      className="w-full px-4 @3xl:px-8 py-4 shadow-sm relative"
     >
       <div className="flex items-center justify-between gap-4">
         <span className="text-xl font-bold tracking-tight shrink-0">{p.logo || 'Logo'}</span>
 
         {/* Desktop Nav */}
-        <nav className="hidden @md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden @3xl:flex items-center gap-6 text-sm font-medium">
           {navItems.map((item: string, i: number) => (
             <a
               key={i}
@@ -129,7 +129,7 @@ function HeaderBlock({ p }: { p: Record<string, any> }) {
             e.stopPropagation();
             setMenuOpen((prev) => !prev);
           }}
-          className="flex @md:hidden items-center justify-center w-9 h-9 rounded-lg border border-black/10 hover:bg-black/5 transition-colors text-lg shrink-0 cursor-pointer select-none"
+          className="flex @3xl:hidden items-center justify-center w-9 h-9 rounded-lg border border-black/10 hover:bg-black/5 transition-colors text-lg shrink-0 cursor-pointer select-none"
           style={{ color: p.textColor }}
           aria-label="Toggle Menu"
         >
@@ -139,7 +139,7 @@ function HeaderBlock({ p }: { p: Record<string, any> }) {
 
       {/* Mobile Nav Dropdown */}
       {menuOpen && (
-        <nav className="flex @md:hidden flex-col gap-1 pt-3 pb-1 border-t border-black/10 mt-3 text-sm font-medium">
+        <nav className="flex @3xl:hidden flex-col gap-1 pt-3 pb-1 border-t border-black/10 mt-3 text-sm font-medium">
           {navItems.map((item: string, i: number) => (
             <a
               key={i}

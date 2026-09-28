@@ -20,7 +20,7 @@ function renderBlockHtml(block: CanvasBlock): string {
       </nav>
 
       <!-- Mobile Burger Button -->
-      <button type="button" onclick="var el=document.getElementById('${uid}-mobile-nav');el.classList.toggle('hidden');el.classList.toggle('flex');" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-current/20 hover:bg-black/5 transition-colors text-lg shrink-0 cursor-pointer" aria-label="Toggle Menu">
+      <button type="button" onclick="var el=document.getElementById('${uid}-mobile-nav');if(el){el.classList.toggle('hidden');el.classList.toggle('flex');}" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-current/20 hover:bg-black/5 transition-colors text-lg shrink-0 cursor-pointer" aria-label="Toggle Menu">
         ☰
       </button>
     </div>

@@ -57,7 +57,10 @@ export function CanvasBlockItem({ block }: Props) {
       {/* Toolbar */}
       <div
         className="absolute top-2 right-2 z-20 flex items-center gap-1 transition-all duration-150"
-        style={{ opacity: isSelected || true ? 1 : 0 }}
+        style={{
+          opacity: isSelected ? 1 : 0,
+          pointerEvents: isSelected ? 'auto' : 'none',
+        }}
       >
         {/* Drag handle */}
         <button
@@ -69,7 +72,6 @@ export function CanvasBlockItem({ block }: Props) {
             backgroundColor: 'rgba(124,58,237,0.9)',
             color: '#fff',
             backdropFilter: 'blur(8px)',
-            opacity: isSelected ? 1 : 0,
           }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -87,7 +89,6 @@ export function CanvasBlockItem({ block }: Props) {
             color: '#fff',
             border: '1px solid rgba(255,255,255,0.1)',
             backdropFilter: 'blur(8px)',
-            opacity: isSelected ? 1 : 0,
           }}
         >
           ↑
@@ -104,7 +105,6 @@ export function CanvasBlockItem({ block }: Props) {
             color: '#fff',
             border: '1px solid rgba(255,255,255,0.1)',
             backdropFilter: 'blur(8px)',
-            opacity: isSelected ? 1 : 0,
           }}
         >
           ↓
@@ -119,7 +119,6 @@ export function CanvasBlockItem({ block }: Props) {
             backgroundColor: 'rgba(239,68,68,0.85)',
             color: '#fff',
             backdropFilter: 'blur(8px)',
-            opacity: isSelected ? 1 : 0,
           }}
         >
           ✕
